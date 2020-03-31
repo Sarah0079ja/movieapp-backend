@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 // db config
-const db = config.get('mongoURI');
+const db = config.get('MONGO_URI');
   
 // connect mongo  
 mongoose
