@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const config = require("config");
+
 const cors = require("cors")
 const path = require('path')
+require('dotenv').config
 
 const app = express(); 
 
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 // db config
-const db = config.get('MONGO_URI');
+const db = process.env.MONGO_URI
   
 // connect mongo  
 mongoose
