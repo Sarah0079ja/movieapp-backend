@@ -30,11 +30,11 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 mongoose.connect(
   "mongodb+srv://MovieDb:movie01@cluster0-9n9ja.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true  }
 );
 mongoose.connection
   .once("open", function() {
-    console.log("Conection has been made!");
+    console.log("MongoDb connected...");
   })
   .on("error", function(error) {
     console.log("Error is: ", error);
